@@ -67,3 +67,7 @@ are docs, not scaffolding: each is a self-contained 2–6k-token file with the
 patterns, the traps, and verify steps. Start at [START-HERE.md](START-HERE.md);
 agents get [SKILL.md](SKILL.md). Extracted from a production site, not
 invented.
+
+## License
+
+MIT — use it, adapt it, share it. See [LICENSE](LICENSE).
