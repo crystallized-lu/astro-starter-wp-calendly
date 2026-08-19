@@ -60,8 +60,9 @@ It also lives in its own repository:
 ## For technical readers
 
 Astro 6 (fully static) + Preact islands · headless WordPress via REST at
-build time · Calendly by link-out (no third-party scripts on-page) ·
-self-hosted form ingest · object-storage hosting behind a CDN. The sprints
+build time · Calendly by link-out (no third-party scripts on-page) · contact
+form via CF7's REST endpoint (Flamingo storage, no custom backend) ·
+object-storage hosting behind a CDN. The sprints
 are docs, not scaffolding: each is a self-contained 2–6k-token file with the
 patterns, the traps, and verify steps. Start at [START-HERE.md](START-HERE.md);
 agents get [SKILL.md](SKILL.md). Extracted from a production site, not

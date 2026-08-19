@@ -135,16 +135,13 @@ DNS changes take minutes to a few hours to propagate. Not broken, just slow.
 at the end of sprint 11 (`curl -sI https://www.your-domain.com/`) and
 confirms HTTPS, gzip, and cache headers.
 
-## 6. If you build sprint 08 (forms) or a booking backend
+## 6. That's all — no servers, no databases
 
-Those need one small server-side piece: **Containers** (sidebar:
-**Serverless** → **Containers**) plus a managed **PostgreSQL** database
-(**Databases** → **PostgreSQL**). Create them in the same project and
-region. The database password is a secret — rule zero applies: it goes
-from the Scaleway page into the container's **environment variables**
-(container → Settings → Environment variables, mark it "secret"), never
-into chat or code. Sprint 08 covers the code; the console part is just
-those two creations plus copying the database hostname.
+Forms are handled by WordPress (sprint 08) and bookings by Calendly
+(sprint 09), so this stack needs nothing from Scaleway beyond the buckets
+and the CDN above. If you ever add a custom backend later, remember rule
+zero: any new password or key goes from the provider's page straight into
+an environment-variable or secrets screen — never through the chat.
 
 ## The whole thing, as a checklist
 

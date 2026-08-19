@@ -36,7 +36,7 @@ independently skippable.
 | 05 | `sprints/05-aeo-mirrors-llmstxt.md` | Markdown mirrors, build gate, llms.txt | 04 |
 | 06 | `sprints/06-blog.md` | Blog fed from WordPress REST API, post layout, RSS, TOC | 01 |
 | 07 | `sprints/07-a11y-responsive.md` | Skip link, focus, reduced motion, breakpoints | 01 |
-| 08 | `sprints/08-forms-api.md` | Self-hosted ingest, validation, honeypot, injection filter | 00 |
+| 08 | `sprints/08-forms-api.md` | Contact form handled by WordPress (CF7 + Flamingo), spam trap | 06 |
 | 09 | `sprints/09-booking-calendar.md` | Calendly booking, privacy-respecting link-out or embed | 01 |
 | 10 | `sprints/10-privacy-analytics-email.md` | Plausible, no-banner rationale, email obfuscation | 01 |
 | 11 | `sprints/11-deploy.md` | Object-storage deploy, gzip, cache policy | 00 |
@@ -45,17 +45,18 @@ Minimum viable site: 00, 01, 03, 07, 11. Add the rest as needed.
 
 ## Stack — fixed, not configurable
 
-Astro 6 (static) · Preact · WordPress (headless, content only) · Scaleway
-Object Storage + CDN · Scaleway Functions (containerized) · Postgres · Brevo ·
-Plausible · Calendly.
+Astro 6 (static) · Preact · WordPress (headless: content + forms) · Scaleway
+Object Storage + CDN · Brevo (email/newsletter, optional) · Plausible ·
+Calendly. No servers of your own: the only backend is WordPress.
 
 Sprints assume this stack and do not branch. Swapping a layer means editing
 that sprint file, which is cheaper than making every file handle every case.
 
-WordPress is a **content backend only**: Astro fetches posts from its REST API
-at build time and ships static HTML. WordPress never serves a public page, so
-its performance and most of its attack surface stay out of the picture. Keep
-the WP admin on its own (sub)domain, keep it updated, and rebuild the site on
+WordPress is the **backend, never the public site**: Astro fetches posts from
+its REST API at build time and ships static HTML, and the contact form posts
+to a WP form plugin (sprint 08). Visitors never load a WordPress page, so its
+performance and most of its attack surface stay out of the picture. Keep the
+WP admin on its own (sub)domain, keep it updated, and rebuild the site on
 publish — a WP webhook hitting your CI is the usual trigger.
 
 Calendly is a US-based processor. If your visitors are in the EU, name it in
@@ -66,7 +67,7 @@ stance in sprint 10.
 ## Non-negotiables carried through every sprint
 
 - No personal data in logs, fixtures, or prompts.
-- Parameterized SQL only. Insert-only DB roles for ingest paths.
+- Forms collect the minimum: every field you don't ask for is data you don't hold.
 - No cookies without consent — the analytics choice makes consent unnecessary.
 - Accessibility is not a later sprint. Sprint 07 is a sweep, not the first pass.
 - Trailing slashes always. Canonical host is `www`, everywhere, no exceptions.

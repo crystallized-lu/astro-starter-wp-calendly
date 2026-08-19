@@ -169,7 +169,7 @@ Two options:
 only work as real headers):
 
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; connect-src 'self' https://plausible.io https://api.example.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; connect-src 'self' https://plausible.io https://cms.example.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 ```

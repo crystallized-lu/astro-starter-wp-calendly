@@ -37,8 +37,7 @@ diverge — a staging-only deploy path is a production bug waiting to ship.
   env:
     # BaseLayout noindexes everything when this is "staging" (sprint 01).
     PUBLIC_SITE_ENV: ${{ inputs.environment }}
-    PUBLIC_API_URL: https://api.example.com
-    PUBLIC_INGEST_URL: ${{ secrets.PUBLIC_INGEST_URL }}
+    WP_API_URL: ${{ vars.WP_API_URL }}   # sprint 06's content fetch
   run: npm run build
 ```
 
@@ -166,9 +165,10 @@ A check that runs only when someone remembers is not a check.
 ## Backups
 
 Object storage holds a build artifact and needs no backup — the repo is the
-source. **Postgres does.** If sprint 08 is in scope: `pg_dump` on a schedule,
-14-day rotation, off-host, and one verified restore. An untested backup is a
-belief, not a backup.
+source. **WordPress does**: it holds your posts and your form submissions.
+Use the WP host's automated backups (most managed hosts include them) or a
+backup plugin on a schedule, kept off the WP server itself — and restore one
+backup once to prove it works. An untested backup is a belief, not a backup.
 
 ## Verify
 

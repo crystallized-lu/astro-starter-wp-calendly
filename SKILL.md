@@ -1,13 +1,13 @@
 ---
 name: astro-wordpress-starter
-description: Use when building a new marketing or consultancy website that needs speed, bilingual content, SEO/AEO, a WordPress-backed blog, accessibility, self-hosted form handling, and Calendly booking. Also use when the user mentions "new website", "site framework", "Astro starter", "headless WordPress", "bilingual site", or "llms.txt". Delivers a sprint-by-sprint build plan, not a code dump.
+description: Use when building a new marketing or consultancy website that needs speed, bilingual content, SEO/AEO, a WordPress-backed blog, accessibility, WordPress-handled forms, and Calendly booking. Also use when the user mentions "new website", "site framework", "Astro starter", "headless WordPress", "bilingual site", or "llms.txt". Delivers a sprint-by-sprint build plan, not a code dump.
 ---
 
 # Astro Starter — WordPress backend, Calendly booking
 
 A staged build guide for an Astro site with: sub-second loads, EN/FR from day
 one, SEO + answer-engine optimization, a blog fed from headless WordPress,
-WCAG AA, self-hosted form ingest, and Calendly booking.
+WCAG AA, a WordPress-handled contact form, and Calendly booking.
 
 ## How to use
 
