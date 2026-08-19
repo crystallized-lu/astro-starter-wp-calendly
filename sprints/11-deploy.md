@@ -7,6 +7,12 @@
 Static site on EU object storage behind a CDN, with correct compression and
 cache headers, deployed by CI on push.
 
+**Prerequisite:** the Scaleway side — account, buckets, API key, Edge
+Services, DNS — is console clicking the AI cannot do. The human does
+`reference/scaleway-setup.md` first; this sprint assumes its checklist is
+complete and the five deploy secrets exist in GitHub Actions. Never ask the
+user to paste secret values into the conversation — verify by name only.
+
 ## Why object storage
 
 No server to patch, no runtime to exploit, near-zero cost, and it scales

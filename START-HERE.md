@@ -82,3 +82,8 @@ exactly the failure modes AI-assisted builds ship with. Install it to
 
 Read `reference/gotchas.md` before sprint 08 or 11. It lists the things the
 source site got wrong, so this build does not repeat them.
+
+Before sprint 11, the human works through `reference/scaleway-setup.md` —
+a click-by-click console walkthrough (buckets, API key, CDN, DNS) the AI
+cannot do for them. It includes the one safety rule that overrides
+everything: secret keys never get pasted into the AI chat.
